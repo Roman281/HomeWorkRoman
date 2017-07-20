@@ -1,0 +1,98 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.clear {
+	clear: both;
+	position: absolute;
+  	bottom: 0;
+  	/*width: 100%;*/
+  	height: 80px;
+}
+
+.right {
+	text-align: right;
+}
+
+#content h2 {
+	text-align: center;
+}
+
+#logo {
+	border: 1px solid black;
+	margin: 10px 10px;
+	width: 100px;
+	text-align: center;
+}
+#left {
+	min-height: ;
+	padding: 0 10px;
+	width: 230px;
+	border-right: 1px solid black;
+	float: left;
+}
+/*#left {
+	border-right: 2px solid black;
+	float: left;
+	width: 5px ;
+	/*position: relative;
+	}*/
+/*#right {
+	border-left: 1px solid black;
+	float: right;
+
+}*/
+
+#center {
+	border-left: 1px solid black;
+	float: left;
+	margin-left: 250px;
+	margin-right: 250px;
+	padding: 0 10px;
+}
+
+#center h2 {
+	margin: 0;
+	text-align: center;
+}
+
+hr {
+	margin: 0;
+}
+
+/*.footer {
+	border-right: 1px solid black;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+
+}*/
+
+.banner {
+	border: 1px solid black;
+	margin: 10px auto 0;
+	width: 200px;
+}
+
+#footer {
+	border-top: 1px solid black;
+	height: 50px;
+	margin-bottom: -150px;
+	text-align: center;
+	position: relative;
+	margin-top: -150px; /* negative value of footer height */
+	clear:both;
+
+}
+.clearfix {display: inline-block;}
+
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+#wrap {height: auto; min-height: 100%;}
+____________________________________________________________________________
