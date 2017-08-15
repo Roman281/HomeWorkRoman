@@ -1,4 +1,7 @@
 <?php require_once 'html/functions.php' ?>
+<?php  $cart = getCart($products) ?>
+<?php  $cart2 = getWish($products) ?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -16,11 +19,21 @@
     <div class="row">
         <div class="bg-info col-lg-12">
             <?php viewMenu($pages) ?>
-            <div id = 'basket'>
-                <a href="">
-                <img src="files/images/basket1.png" width="40">
-                <p>Ваша корзина </p> <input class = 'bask' type="namber" name="basketnum" size="1*10">товаров
-                </a>
+           <div class = 'list'>
+                    <div id = 'wish'>
+                        <a href="?r=wishlist">
+                        <img src="files/images/wish.png" width="40">
+                        <p>В избранное </p> 
+                    </div>
+                    <div id = 'basket'>
+                        <a href="?r=cart">
+                        <img src="files/images/basket1.png" width="40">
+                        <p>Ваша корзина </p> <input class = 'bask' type="namber" name="basketnum" value = "<?php echo $cart->total_amount;?>" size="1*10"> 
+                        товаров
+                        на сумму <?php echo $cart->total_price;?> грн.
+                        </a>
+                    </div>
+               
             </div>
         </div>
     </div>
@@ -40,13 +53,15 @@
             <div class="col-lg-8 panel panel-default">
                 <h2 class="panel-heading">Content</h2>
 
-                <div> <?php $r = viewProduct( $_GET['products']) ?></div>
+                <div> <?php require_once 'html/content.php' ?></div>
             </div>
             <div class="row col-lg-12">
+            <hr>
                 <div class="panel-footer">
                     <h2 class="panel-heading">Footer</h2>
-                    <?php timeVisit($data2) ?>
-                    <a href=""> <?php lastUrl ($url)  ?></a>
+                    <?php echo $data2; ?>
+                    <br>
+                    <a href=""> <?php echo $url2;  ?></a>
                 </div>
             </div>
         </div>

@@ -1,65 +1,13 @@
 <?php
-/*header('Content-Type: text/html; charset=utf-8');
+header('Content-Type: text/html; charset=utf-8');
 ini_set('display_errors',true);
-error_reporting(E_ALL);*/
+error_reporting(E_ALL);
 
 require_once 'data/menu.php';
 require_once 'data/categories.php';
 require_once 'data/products.php';
 
- function timeVisit($time) {
-        if(isset($_COOKIE["data"])) {
-            $data = date('Y-F-d,  H:i:s');
-            setcookie("data", $data  );
-        } else {
-            setcookie("data", date('Y-F-d,  H:i:s') );
-        }
-       
-       echo "Время  последнего посещения:".$data;
-       }
-        $data2 = isset($_COOKIE["data"])?$_COOKIE['data']:'data';
-        timeVisit($data2);
-        //timeVisit($time);
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-   
-function lastUrl($time) {
-        if(isset($_COOKIE["url"])) {
-            $url = $_SERVER['HTTP_REFERER'];
-            setcookie("url", $_SERVER['HTTP_REFERER']);
-        } else {
-            setcookie("url", $_SERVER['HTTP_REFERER']);
-        }
-               $url=$_SERVER['HTTP_REFERER'];
-              echo "Последний посещенный сайт:".$url;
-       }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-
-       function basket () {
-//Добавление/обновление товара в корзине
-    if(isset($_GET) && $_GET['amount']) {
-        $product_id = strip_tags(trim($_GET['product_id']));
-        $amount = strip_tags(trim($_GET['amount']));
-        $cart = array();
-        if($_COOKIE['cart']) {
-            $cart = unserialize($_COOKIE['cart']);
-            $cart[$product_id] = $amount;
-            setcookie('cart',serialize($cart),time()+3600,'/');
-        } else {
-            $cart[$product_id] = $amount;
-            setcookie('cart',serialize($cart),time()+3600,'/');
-        }
-    }
-    print_r(unserialize($_COOKIE['cart']));
-    //достаем товары из корзины
-
-    $cart_products = unserialize($_COOKIE['cart']);
-
-    foreach ($cart_products as $id => $amount) {
-        $products_cart[$id] = getProduct($products,$id);
-        $products_cart[$id]->amount = $amount;
-        }
-    }
 
 /*Построение дерева категорий*/
 function makeTree($categories,$parent_id=0) {
@@ -140,4 +88,122 @@ function viewProduct($products) {
    return $r;
     }
 
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+ function timeVisit($time) {
+        if(isset($_COOKIE["data"])) {
+            $data = date('Y-F-d,  H:i:s');
+            setcookie("data", $data  );
+        } else {
+            setcookie("data", date('Y-F-d,  H:i:s') );
+        }
+       return $time;
+       //echo "Время  последнего посещения:".$data;
+       }
+        $data2 = isset($_COOKIE["data"])?$_COOKIE['data']:'data';
+        timeVisit($data2);
+        //timeVisit($time);
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+   
+function lastUrl($url) {
+        if(isset($_COOKIE["url"])) {
+            $url = $_SERVER['HTTP_REFERER'];
+            setcookie("url", $_SERVER['HTTP_REFERER']);
+        } else {
+            setcookie("url", $_SERVER['HTTP_REFERER']);
+        }
+           return $url;
+              // $url = $_SERVER['HTTP_REFERER'];
+             // echo "Последний посещенный сайт:".$url;
+       }
+       $url2 = isset($_COOKIE["url"])?$_COOKIE['url']:'url';
+        
+       lastUrl($url2);
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+     
+//Добавление/обновление товара в корзине
+    if(isset($_GET['amount']) && isset($_GET['id'])) {
+        $cart = array();
+        $product_id = trim(strip_tags($_GET['id']));
+        $amount = trim(strip_tags($_GET['amount']));
+            if(isset($_COOKIE['cart'])) {
+                $cart = unserialize($_COOKIE['cart']);
+            }
+        $cart[$product_id] = $amount;
+
+        setcookie('cart',serialize($cart),time()+(3600*24*30),'/');
+        $path = '?r=product&id='.$_GET['id'];
+        header("Location: $path");
+    }
+    /*print_r(unserialize($_COOKIE['cart']));*/
+    //достаем товары из корзины
+    function getCart($products) {
+        $cart_products = array();
+        $total_amount = 0;
+        $total_price = 0;
+        $cart = new stdClass();
+        if(isset($_COOKIE['cart'])) {
+            $ids = unserialize($_COOKIE['cart']);
+            foreach ($ids as $id=>$amount) {
+                $cart_products[$id] = getProduct($products, $id);
+                $cart_products[$id]->amount = $amount;
+                $total_price += $cart_products[$id]->variant->price*$amount;
+                $total_amount += $amount;
+            }
+            $cart->items = $cart_products;
+        }
+        $cart->total_price = $total_price;
+        $cart->total_amount = $total_amount;
+        return $cart;
+    }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+ if(isset($_GET['amount']) && isset($_GET['id'])) {
+        $cart2 = array();
+        $product_id = trim(strip_tags($_GET['id']));
+        $amount = trim(strip_tags($_GET['amount']));
+            if(isset($_COOKIE['wishlist'])) {
+                $cart2 = unserialize($_COOKIE['wishlist']);
+            }
+        $cart2[$product_id] = $amount;
+
+        setcookie('wishlist',serialize($cart2),time()+(3600*24*30),'/');
+        $path = '?r=product&id='.$_GET['id'];
+        header("Location: $path");
+    }
+
+   function getWish($products) {
+        $cart_products2 = array();
+        $total_amount2 = 0;
+        $cart2 = new stdClass();
+        if(isset($_COOKIE['wishlist'])) {
+            $ids2 = unserialize($_COOKIE['wishlist']);
+            foreach ($ids2 as $id=>$amount) {
+                $cart_products2[$id] = getProduct($products, $id);
+                $cart_products2[$id]->amount = $amount;
+                 $total_amount2 += $amount;
+            }
+            $cart2->items = $cart_products2;
+            //print_r($cart2);
+        }
+        return $cart2;
+    }
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+     /*Очистить корзину*/
+
+function clean($clean) {
+   if(isset($cart)) { 
+        $cart = array();
+   if(isset($_COOKIE['cart'])) {
+               $cart = unserialize($_COOKIE['cart']);
+                 setcookie('cart',serialize($cart),time()-(3600*24*30),'/');
+        }
+    }
+        return $clean;
+
+       
+       // $path = '?r=product&id='.$_GET['id'];
+       header("Location: $path");
 }

@@ -1,4 +1,4 @@
-<?php $product = getProduct($products,$id) ?>
+<?php $product = getProduct($products, $id) ?>
 
 <h1 class="page-header"><?php echo $product->name ?></h1>
 
@@ -20,6 +20,7 @@
                 <?php else:?>
                     <span class="label label-info">Цена товара: <?php echo ceil($product->variant->price) ?> грн.</span>
                 <?php endif;?>
+
             </div>
 
             <?php if($product->description):?>
@@ -29,16 +30,24 @@
                 </div>
             <?php endif;?>
         </div>
+        <div class = 'form-basket'>
+                    <form  method="get">
+                        <label>Количество</label>
+                        <input type="number" name="amount" value = '1' min="1" max="50">           
+                        <input type="hidden" name="r" value="<?php echo $_GET['r'] ?>">
+                        <input type="hidden" name="id" value="<?php echo $product->id ?>">
+                        <input type="submit" style="background: #ed710b; name="bay" value= 'Купить'>
+                    </form>            
+        </div>
+        <div class = 'form-wish'>
+                    <form  method="get">
+                        <input type="hidden" name="r" value="<?php echo $_GET['r'] ?>">
+                        <input type="hidden" name="id" value="<?php echo $product->id ?>">
+                        <input type="submit" style="background: #94f7bf; name="wish" value= 'В избранное'>
+                    </form>            
+        </div>
 
     </div>
-    <div class = 'form-basket'>
-        <form  method="get">
-            <label>Количество</label>
-            <input type="number" name="amount" value = ''>
-           <!-- <label>ID товара</label>-->
-            <input type="hidden" name="product_id">
-            <input type="submit" style="background: #ed710b; name="bay" value= 'Купить'>
-        </form>
-    </div>
+   
 
 </div>
