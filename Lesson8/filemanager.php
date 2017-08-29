@@ -7,87 +7,142 @@
 	<link rel="stylesheet" type="text/css" href="css.css">
 </head>
 <body>
-		<div>
-			<div id = 'manag'>
-				
-						<div class = 'left'>
-							<div class = 'form'>
-								<?php 
-									if($_SERVER["REQUEST_METHOD"] == "POST") {
-									    //print_r($_FILES);
+<div>
+	<div id = 'manag'>
+	<div class = 'left'>
+		<div class = 'form'>
+				<?php 
+function translit($string) {
+    $converter = array(
+        'а' => 'a',   'б' => 'b',   'в' => 'v',
+        'г' => 'g',   'д' => 'd',   'е' => 'e',
+        'ё' => 'e',   'ж' => 'zh',  'з' => 'z',
+        'и' => 'i',   'й' => 'y',   'к' => 'k',
+        'л' => 'l',   'м' => 'm',   'н' => 'n',
+        'о' => 'o',   'п' => 'p',   'р' => 'r',
+        'с' => 's',   'т' => 't',   'у' => 'u',
+        'ф' => 'f',   'х' => 'h',   'ц' => 'c',
+        'ч' => 'ch',  'ш' => 'sh',  'щ' => 'sch',
+        'ь' => '\'',  'ы' => 'y',   'ъ' => '\'',
+        'э' => 'e',   'ю' => 'yu',  'я' => 'ya',
 
-									    $ext = array('png','jpg','txt','pdf');
+        'А' => 'A',   'Б' => 'B',   'В' => 'V',
+        'Г' => 'G',   'Д' => 'D',   'Е' => 'E',
+        'Ё' => 'E',   'Ж' => 'Zh',  'З' => 'Z',
+        'И' => 'I',   'Й' => 'Y',   'К' => 'K',
+        'Л' => 'L',   'М' => 'M',   'Н' => 'N',
+        'О' => 'O',   'П' => 'P',   'Р' => 'R',
+        'С' => 'S',   'Т' => 'T',   'У' => 'U',
+        'Ф' => 'F',   'Х' => 'H',   'Ц' => 'C',
+        'Ч' => 'Ch',  'Ш' => 'Sh',  'Щ' => 'Sch',
+        'Ь' => '\'',  'Ы' => 'Y',   'Ъ' => '\'',
+        'Э' => 'E',   'Ю' => 'Yu',  'Я' => 'Ya',
+        ' ' => '-',
+    );
+    return strtr($string, $converter);
+}
 
-									    $name = $_FILES['filename']['name'];
-									    $file = $_FILES['filename']['tmp_name'];
-									    $file_ext = pathinfo($name,PATHINFO_EXTENSION);
-									    $base = pathinfo($name, PATHINFO_FILENAME);
+if($_SERVER["REQUEST_METHOD"] == "POST" & isset($_POST['upload'])) {
+	    //print_r($_FILES);
+	$files = reset($_FILES);
+	$ext = array('png','jpg','txt','pdf');
 
-									    function transliterate($st) {
-										  $st = strtr($st, 
-										    "абвгдежзийклмнопрстуфыэАБВГДЕЖЗИЙКЛМНОПРСТУФЫЭ",
-										    "abvgdegziyklmnoprstufieABVGDEGZIYKLMNOPRSTUFIE"
-										  );
-										  $st = strtr($st, array(
-										    'ё'=>"yo",    'х'=>"h",  'ц'=>"ts",  'ч'=>"ch", 'ш'=>"sh",  
-										    'щ'=>"shch",  'ъ'=>'',   'ь'=>'',    'ю'=>"yu", 'я'=>"ya",
-										    'Ё'=>"Yo",    'Х'=>"H",  'Ц'=>"Ts",  'Ч'=>"Ch", 'Ш'=>"Sh",
-										    'Щ'=>"Shch",  'Ъ'=>'',   'Ь'=>'',    'Ю'=>"Yu", 'Я'=>"Ya",
-										  ));
-										  return $st;
-										}
-										transliterate("У попа была собака, он ее любил.");
+	for ($i = 0; $i < count($files['name']); $i++) {
+		$filename = $files['name'][$i];
+		$path = $files['tmp_name'][$i];
+	$file_ext = pathinfo($filename,PATHINFO_EXTENSION);
+	$base = pathinfo($filename, PATHINFO_FILENAME);
 
-									    if(in_array($file_ext,$ext)) {
-									        while (file_exists('images/'.$name)) {
-									            //$name = $base.time().'.'.$file_ext;
-									            $name = transliterate($base).substr(md5(rand(1 , 1000).uniqid(1)),-4).'.'.$file_ext;
-									        }
-									        $res = move_uploaded_file($file,'images/'.$name);
-									        if($res) {
-									            echo "ok";
-									        } else {
-									            echo "false";
-									        }
-									    } else {
-									        echo "wrong_type";
-									    }
-									}
-								 ?>
 
-								<form action='' method='post' enctype='multipart/form-data'>
-										<p>Загрузите  это фото</p>
-										<input name='filename' type='file' multiple='true' min='1' max='99'>
-										<p><input type='submit' value='Ok'></p>
-								</form>
-							</div>
 
-						</div>
-						<div class = 'right'>
-							<div class = 'list'>
-							<?php 
-								$dir = "images/";
-								$h = opendir($dir);
-								while ($item = readdir($h)) {
-								    if($item == '.' || $item == '..')
-								        continue;
-								    if (is_file($item)) {
-								        echo "<b>file: $item</b><br>";
-								    } elseif (is_dir($item)) {
-								        echo "<b>dir: $item</b><br>";
-								    } else {
-								        echo $item."<br>";
-								    }
+		if(in_array($file_ext,$ext)) {
+			if(!file_exists('images')){
+		                mkdir('images',0777);
+		    }
+		        while (file_exists('images/'.$name)) {
+		            //$name = $base.time().'.'.$file_ext;
+		            $name = translit($base).substr(md5(rand(1 , 1000).uniqid(1)),-4).'.'.$file_ext;
+		        }
+				        $res = move_uploaded_file($path,'images/'.$name);
+		        if($res) {
+		            echo "ok";
+		        } else { echo "wrong_type";
+		    	}
+		} else { $message = 'wrong filetype!';
+		}
 
-								}
-								closedir($h);
-							 ?>
-							 </div>
-						</div>
-					
-			</div>
+	}
+}
 
-		</div>
+if(isset($message)) {
+    echo "<h5>$message</h5>";
+}
+
+										
+function getImages($dir = null){
+	if(is_null($dir) || !file_exists($dir)) {
+        return false;
+    }
+    $perms = array('png','jpg','txt','pdf');
+    $handle_dir = opendir($dir);
+
+    $uploaded_files = array();
+    while ($file = readdir($handle_dir)) {
+    	if (in_array(pathinfo($file,PATHINFO_EXTENSION), $perms)) {
+    		$uploaded_files[$file] = filesize($dir.'/'.$file);
+    	}
+    }
+    closedir($handle_dir);
+    
+	foreach ($uploaded_files as $name => $size) {
+		echo "<ul>";
+			echo "<li>";
+				echo "name: ".$name. " _" . round($size/1024, 2) . "Kb";
+			echo "</li>";
+		echo "</ul>";
+	}
+
+}
+	
+	 ?>
+
+	<form action='' method='post' enctype='multipart/form-data'>
+		<p>Загрузите  это фото</p>
+		<input name='filename[]' type='file' multiple='true' min='1' max='99'>
+		<p><input type='submit' value='Ok' name="upload"></p>
+	</form>
+	</div>
+
+</div>
+<div class = 'right'>
+		<div class = 'list'>
+		<h3>Загруженные фото</h3>
+		<?php 
+			/*$dir = "images/";
+			$h = opendir($dir);
+			while ($item = readdir($h)) {
+			    if($item == '.' || $item == '..')
+			        continue;
+			    if (is_file($item)) {
+			        echo "<b>file: $item</b><br>";
+			    } elseif (is_dir($item)) {
+			        echo "<b>dir: $item</b><br>";
+			    } else {
+			        echo $item."<br>";
+			    }
+
+			}
+			closedir($h);*/
+
+            getImages('images');
+            
+		 ?>
+		 </div>
+	</div>
+			
+	</div>
+
+</div>
 
 </body>
 </html>
