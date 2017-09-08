@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg
+PUBLIC "-//W3C//DTD SVG 1.1//EN"
+       "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg viewBox="122 16 756 537" width="634px" height="521px" xmlns="http://www.w3.org/2000/svg" version="1.1">
+   <line x1="209" y1="457" x2="219" y2="457" style="stroke:#b0b;stroke-width:1;"/>
+   <line x1="617" y1="452" x2="627" y2="452" style="stroke:#b0b;stroke-width:1;"/>
+   <line x1="219" y1="457" x2="617" y2="452" style="stroke:#b0b;stroke-width:1;"/>
+   <line x1="216.5" y1="457" x2="212.96446609407" y2="460.53553390593" style="stroke:#b0b;stroke-width:2;"/>
+   <line x1="216.5" y1="457" x2="212.96446609407" y2="453.46446609407" style="stroke:#b0b;stroke-width:2;"/>
+   <line x1="622" y1="452" x2="618.46446609407" y2="455.53553390593" style="stroke:#b0b;stroke-width:2;"/>
+   <line x1="622" y1="452" x2="618.46446609407" y2="448.46446609407" style="stroke:#b0b;stroke-width:2;"/>
+   <line x1="739" y1="218" x2="749" y2="218" style="stroke:#0b0;stroke-width:1;"/>
+   <line x1="751" y1="352" x2="741" y2="352" style="stroke:#0b0;stroke-width:1;"/>
+   <line x1="749" y1="218" x2="751" y2="352" style="stroke:#0b0;stroke-width:1;"/>
+   <line x1="746.5" y1="218" x2="742.96446609407" y2="221.53553390593" style="stroke:#0b0;stroke-width:2;"/>
+   <line x1="746.5" y1="218" x2="742.96446609407" y2="214.46446609407" style="stroke:#0b0;stroke-width:2;"/>
+   <line x1="746" y1="352" x2="749.53553390593" y2="355.53553390593" style="stroke:#0b0;stroke-width:2;"/>
+   <line x1="746" y1="352" x2="749.53553390593" y2="348.46446609407" style="stroke:#0b0;stroke-width:2;"/>
+   <line x1="620" y1="66" x2="610" y2="66" style="stroke:#333;stroke-width:1;"/>
+   <line x1="617" y1="352" x2="627" y2="352" style="stroke:#333;stroke-width:1;"/>
+   <line x1="610" y1="66" x2="617" y2="352" style="stroke:#333;stroke-width:1;"/>
+   <line x1="612.5" y1="66" x2="616.03553390593" y2="69.535533905933" style="stroke:#333;stroke-width:2;"/>
+   <line x1="612.5" y1="66" x2="616.03553390593" y2="62.464466094067" style="stroke:#333;stroke-width:2;"/>
+   <line x1="622" y1="352" x2="618.46446609407" y2="355.53553390593" style="stroke:#333;stroke-width:2;"/>
+   <line x1="622" y1="352" x2="618.46446609407" y2="348.46446609407" style="stroke:#333;stroke-width:2;"/>
+   <line x1="274" y1="189" x2="284" y2="189" style="stroke:#0bf;stroke-width:1;"/>
+   <line x1="610" y1="86" x2="620" y2="86" style="stroke:#0bf;stroke-width:1;"/>
+   <line x1="284" y1="189" x2="610" y2="86" style="stroke:#0bf;stroke-width:1;"/>
+   <line x1="281.5" y1="189" x2="277.96446609407" y2="192.53553390593" style="stroke:#0bf;stroke-width:2;"/>
+   <line x1="281.5" y1="189" x2="277.96446609407" y2="185.46446609407" style="stroke:#0bf;stroke-width:2;"/>
+   <line x1="615" y1="86" x2="611.46446609407" y2="89.535533905933" style="stroke:#0bf;stroke-width:2;"/>
+   <line x1="615" y1="86" x2="611.46446609407" y2="82.464466094067" style="stroke:#0bf;stroke-width:2;"/>
+   <line x1="283" y1="299" x2="293" y2="299" style="stroke:#333;stroke-width:1;"/>
+   <line x1="610" y1="106" x2="620" y2="106" style="stroke:#333;stroke-width:1;"/>
+   <line x1="293" y1="299" x2="610" y2="106" style="stroke:#333;stroke-width:1;"/>
+   <line x1="290.5" y1="299" x2="286.96446609407" y2="302.53553390593" style="stroke:#333;stroke-width:2;"/>
+   <line x1="290.5" y1="299" x2="286.96446609407" y2="295.46446609407" style="stroke:#333;stroke-width:2;"/>
+   <line x1="615" y1="106" x2="611.46446609407" y2="109.53553390593" style="stroke:#333;stroke-width:2;"/>
+   <line x1="615" y1="106" x2="611.46446609407" y2="102.46446609407" style="stroke:#333;stroke-width:2;"/>
+   <line x1="245" y1="61" x2="255" y2="61" style="stroke:#0bf;stroke-width:1;"/>
+   <line x1="610" y1="66" x2="620" y2="66" style="stroke:#0bf;stroke-width:1;"/>
+   <line x1="255" y1="61" x2="610" y2="66" style="stroke:#0bf;stroke-width:1;"/>
+   <line x1="252.5" y1="61" x2="248.96446609407" y2="64.535533905933" style="stroke:#0bf;stroke-width:2;"/>
+   <line x1="252.5" y1="61" x2="248.96446609407" y2="57.464466094067" style="stroke:#0bf;stroke-width:2;"/>
+   <line x1="615" y1="66" x2="611.46446609407" y2="69.535533905933" style="stroke:#0bf;stroke-width:2;"/>
+   <line x1="615" y1="66" x2="611.46446609407" y2="62.464466094067" style="stroke:#0bf;stroke-width:2;"/>
+   <rect width="72" height="20" x="137" y="427" style="fill:#007;stroke:black;"/>
+   <text width="72" height="20" x="142" y="441" style="fill:#fff;" font-family="Arial" font-size="16px"> calendar</text>
+   <rect width="72" height="20" x="137" y="447" style="fill:none;stroke:black;"/>
+   <text width="72" height="20" x="142" y="461" style="fill:black;" font-family="Arial" font-size="16px">Date</text>
+   <rect width="93" height="20" x="646" y="188" style="fill:#007;stroke:black;"/>
+   <text width="93" height="20" x="651" y="202" style="fill:#fff;" font-family="Arial" font-size="16px"> castomer</text>
+   <rect width="93" height="20" x="646" y="208" style="fill:#aea;stroke:black;"/>
+   <text width="93" height="20" x="651" y="222" style="fill:black;" font-family="Arial" font-size="16px">id_castomer</text>
+   <rect width="93" height="20" x="646" y="228" style="fill:none;stroke:black;"/>
+   <text width="93" height="20" x="651" y="242" style="fill:black;" font-family="Arial" font-size="16px">name</text>
+   <rect width="93" height="20" x="646" y="248" style="fill:none;stroke:black;"/>
+   <text width="93" height="20" x="651" y="262" style="fill:black;" font-family="Arial" font-size="16px">phon</text>
+   <rect width="93" height="20" x="646" y="268" style="fill:none;stroke:black;"/>
+   <text width="93" height="20" x="651" y="282" style="fill:black;" font-family="Arial" font-size="16px">email</text>
+   <rect width="93" height="20" x="646" y="288" style="fill:none;stroke:black;"/>
+   <text width="93" height="20" x="651" y="302" style="fill:black;" font-family="Arial" font-size="16px">age</text>
+   <rect width="79" height="20" x="620" y="36" style="fill:#007;stroke:black;"/>
+   <text width="79" height="20" x="625" y="50" style="fill:#fff;" font-family="Arial" font-size="16px"> cinemas</text>
+   <rect width="79" height="20" x="620" y="56" style="fill:#aea;stroke:black;"/>
+   <text width="79" height="20" x="625" y="70" style="fill:black;" font-family="Arial" font-size="16px">id_cinema</text>
+   <rect width="79" height="20" x="620" y="76" style="fill:none;stroke:black;"/>
+   <text width="79" height="20" x="625" y="90" style="fill:black;" font-family="Arial" font-size="16px">id_city</text>
+   <rect width="79" height="20" x="620" y="96" style="fill:none;stroke:black;"/>
+   <text width="79" height="20" x="625" y="110" style="fill:black;" font-family="Arial" font-size="16px">type_hall</text>
+   <rect width="79" height="20" x="195" y="159" style="fill:#007;stroke:black;"/>
+   <text width="79" height="20" x="200" y="173" style="fill:#fff;" font-family="Arial" font-size="16px"> city</text>
+   <rect width="79" height="20" x="195" y="179" style="fill:#aea;stroke:black;"/>
+   <text width="79" height="20" x="200" y="193" style="fill:black;" font-family="Arial" font-size="16px">id_city</text>
+   <rect width="79" height="20" x="195" y="199" style="fill:none;stroke:black;"/>
+   <text width="79" height="20" x="200" y="213" style="fill:black;" font-family="Arial" font-size="16px">name_city</text>
+   <rect width="85" height="20" x="198" y="269" style="fill:#007;stroke:black;"/>
+   <text width="85" height="20" x="203" y="283" style="fill:#fff;" font-family="Arial" font-size="16px"> hall</text>
+   <rect width="85" height="20" x="198" y="289" style="fill:#aea;stroke:black;"/>
+   <text width="85" height="20" x="203" y="303" style="fill:black;" font-family="Arial" font-size="16px">type_hall</text>
+   <rect width="85" height="20" x="198" y="309" style="fill:none;stroke:black;"/>
+   <text width="85" height="20" x="203" y="323" style="fill:black;" font-family="Arial" font-size="16px">form_place</text>
+   <rect width="85" height="20" x="198" y="329" style="fill:none;stroke:black;"/>
+   <text width="85" height="20" x="203" y="343" style="fill:black;" font-family="Arial" font-size="16px">price</text>
+   <rect width="114" height="20" x="627" y="322" style="fill:#007;stroke:black;"/>
+   <text width="114" height="20" x="632" y="336" style="fill:#fff;" font-family="Arial" font-size="16px"> oder_castomer</text>
+   <rect width="114" height="20" x="627" y="342" style="fill:#aea;stroke:black;"/>
+   <text width="114" height="20" x="632" y="356" style="fill:black;" font-family="Arial" font-size="16px">id_oder</text>
+   <rect width="114" height="20" x="627" y="362" style="fill:none;stroke:black;"/>
+   <text width="114" height="20" x="632" y="376" style="fill:black;" font-family="Arial" font-size="16px">id_castomer</text>
+   <rect width="114" height="20" x="627" y="382" style="fill:none;stroke:black;"/>
+   <text width="114" height="20" x="632" y="396" style="fill:black;" font-family="Arial" font-size="16px">name_city</text>
+   <rect width="114" height="20" x="627" y="402" style="fill:none;stroke:black;"/>
+   <text width="114" height="20" x="632" y="416" style="fill:black;" font-family="Arial" font-size="16px">name_cinema</text>
+   <rect width="114" height="20" x="627" y="422" style="fill:none;stroke:black;"/>
+   <text width="114" height="20" x="632" y="436" style="fill:black;" font-family="Arial" font-size="16px">movies</text>
+   <rect width="114" height="20" x="627" y="442" style="fill:none;stroke:black;"/>
+   <text width="114" height="20" x="632" y="456" style="fill:black;" font-family="Arial" font-size="16px">Date</text>
+   <rect width="114" height="20" x="627" y="462" style="fill:none;stroke:black;"/>
+   <text width="114" height="20" x="632" y="476" style="fill:black;" font-family="Arial" font-size="16px">time</text>
+   <rect width="114" height="20" x="627" y="482" style="fill:none;stroke:black;"/>
+   <text width="114" height="20" x="632" y="496" style="fill:black;" font-family="Arial" font-size="16px">num_place</text>
+   <rect width="114" height="20" x="627" y="502" style="fill:none;stroke:black;"/>
+   <text width="114" height="20" x="632" y="516" style="fill:black;" font-family="Arial" font-size="16px">price</text>
+   <rect width="79" height="20" x="166" y="31" style="fill:#007;stroke:black;"/>
+   <text width="79" height="20" x="171" y="45" style="fill:#fff;" font-family="Arial" font-size="16px"> session</text>
+   <rect width="79" height="20" x="166" y="51" style="fill:#aea;stroke:black;"/>
+   <text width="79" height="20" x="171" y="65" style="fill:black;" font-family="Arial" font-size="16px">id_cinema</text>
+   <rect width="79" height="20" x="166" y="71" style="fill:none;stroke:black;"/>
+   <text width="79" height="20" x="171" y="85" style="fill:black;" font-family="Arial" font-size="16px">movies</text>
+   <rect width="79" height="20" x="166" y="91" style="fill:none;stroke:black;"/>
+   <text width="79" height="20" x="171" y="105" style="fill:black;" font-family="Arial" font-size="16px">duration</text>
+</svg>

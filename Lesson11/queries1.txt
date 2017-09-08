@@ -1,0 +1,43 @@
+INSERT INTO `Group_users` (`cours`, `length_cours`, `level`) VALUE  ('PHP', '5', '5'), 
+('JavaScript', '5', '4'), 
+('HTML', '3', '4'), 
+('CSS', '3', '4');
+
+
+SELECT * FROM `users`
+SELECT * FROM `users` WHERE 'Group' = 'php';
+
+	
+
+SELECT * FROM `users` ORDER BY `groups` DESC;
+
+SELECT `groups` FROM `users` WHERE `groups` = 'PHP' AND `groups` = 'html';
+
+SELECT `name` FROM `users` WHERE `groups` = 'PHP';
+
+SELECT `name`, `email`, `phon`, `groups`  FROM `users` WHERE `groups` = 'html';
+
+SELECT `Group_users`.`groups`, `Group_users`.`level`, `users`.`name`, `users`.`email`, `users`.`phon` FROM `Group_users`, `users` WHERE `Group_users`.`length_cours` = 5 AND `Group_users`.`groups` = `users`.`groups`; 
+
+UPDATE `Group_users` SET `length_cours`= '6' WHERE `groups` = 'JavaScript';
+
+
+/********************************************************/
+
+ База данных для системы онлайн продажи билетов в кино
+
+ db_cinemas_ticket
+
+ В таблице cinemas собираются данные из таблиц session, city,
+ hall. 
+
+ В таблице session содержится информация о названии фильма и его описание.
+
+ В таблице city содержится наименования городов
+
+ В таблице hall в столбце form_place содержится форма мест в кинозале. Каждое место это кнопка, при нажатии которой передается информация в таблицу oder_castomer. Т.е. это выбор места в кинозале. Нажатая кнопка стает не активной.
+
+ В таблице oder_castomer стекается вся информация касаемо заказа.
+
+
+ 
